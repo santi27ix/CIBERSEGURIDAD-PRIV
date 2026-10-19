@@ -52,7 +52,7 @@ Así es como situamos una imágen con un enlace.
 
 Y así creamos una imagen con un enlace local y también con el archivo en local.
 
-![Comentario de la foto.](PLANTILLAS/affbb0826a594a563ce0bbb33fd5ffba.jpg)
+![Comentario de la foto.](./affbb0826a594a563ce0bbb33fd5ffba.jpg)
 # 5.-
 
 Para crear listas, si queremos enumerar cosas importantes o hacer la lista de la compra es así:çç
