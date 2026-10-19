@@ -75,8 +75,10 @@ Si queremos hacer una lista con texto por debajo es así.
 
 # 6.-
 
+Así haremos que las notas tengan diferentes referencias
+
 > [!NOTE]
-Esta es información útil que los usuarios deben conocer, incluso si solo echan un vistazo al contenido.
+>Esta es información útil que los usuarios deben conocer, incluso si solo echan un vistazo al contenido.
 
 > [!TIP]
 > Helpful advice for doing things better or more easily.
