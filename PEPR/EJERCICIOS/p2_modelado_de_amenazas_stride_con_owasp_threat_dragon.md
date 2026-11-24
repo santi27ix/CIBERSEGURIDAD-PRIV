@@ -43,7 +43,7 @@ git clone --depth 1 --branch v20.3.0 https://github.com/juice-shop/juice-shop.gi
 2. Identificar todos sus elementos: actores externos, procesos, almacenes de datos y flujos de información.
 3. Localizar las **fronteras de confianza** (*Trust Boundaries*) que atraviesan los flujos, ya que constituyen los puntos críticos donde cambian los privilegios y donde deben concentrarse las amenazas STRIDE.
 
-[MODELO](../IMG/threadmodel.png)
+![MODELO](../IMG/threadmodel.png)
 
 ### Explicación e inventario del DFD «High Level Data Flow»
 
