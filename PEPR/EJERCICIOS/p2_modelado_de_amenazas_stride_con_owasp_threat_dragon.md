@@ -43,7 +43,7 @@ git clone --depth 1 --branch v20.3.0 https://github.com/juice-shop/juice-shop.gi
 2. Identificar todos sus elementos: actores externos, procesos, almacenes de datos y flujos de información.
 3. Localizar las **fronteras de confianza** (*Trust Boundaries*) que atraviesan los flujos, ya que constituyen los puntos críticos donde cambian los privilegios y donde deben concentrarse las amenazas STRIDE.
 
-[MODELO](./IMG/threadmodel.png)
+[MODELO](../IMG/threadmodel.png)
 
 ### Explicación e inventario del DFD «High Level Data Flow»
 
@@ -68,7 +68,7 @@ En el diagrama se distinguen **5 fronteras de confianza** (representadas mediant
 
 ### Evidencia visual 1: Diagrama DFD con amenazas STRIDE en Threat Dragon
 
-![Diagrama DFD de OWASP Juice Shop con amenazas STRIDE](IMG/threadmodelterminado.png)
+![Diagrama DFD de OWASP Juice Shop con amenazas STRIDE](../IMG/threadmodelterminado.png)
 
 
 ---
@@ -103,26 +103,26 @@ A continuación se detallan las **9 amenazas** incorporadas al modelo, explicand
 | **07** | **D** *(Denial of Service)* | **Proceso:** `Application Server` | **Denegación de servicio por subida de archivos masivos o peticiones sin límite:** Un atacante envía ficheros de gran tamaño en el formulario de quejas (*Complaint*) o lanza ráfagas masivas de peticiones contra la API, saturando la CPU, memoria y disco del servidor. | **Medium**<br>*Open* | Limitar el tamaño máximo de subida de archivos (p. ej., 2 MB), validar extensiones/MIME types en el servidor y aplicar *rate limiting* por IP y usuario. |
 | **08** | **E** *(Elevation of Privilege)* | **Proceso:** `Application Server` / `B2B API` | **Elevación de privilegios horizontal (IDOR) y vertical:** Un cliente autenticado accede a rutas de administración (`/#/administration`) o consulta cestas de otros clientes modificando el identificador numérico en `GET /rest/basket/1` sin validación de permisos. | **High**<br>*Open* | Implementar control de acceso basado en roles (RBAC) en cada endpoint y comprobar en el servidor que el recurso solicitado pertenece al usuario de la sesión. |
 
-![AMENAZA1](./IMG/1amenazastride.png)
-![AMENAZA2](./IMG/2amenazastride.png)
-![AMENAZA3](./IMG/3amenazastride.png)
-![AMENAZA4](./IMG/4amenazastride.png)
-![AMENAZA5](./IMG/5amenazastride.png)
-![AMENAZA6](./IMG/6amenazastride.png)
-![AMENAZA7](./IMG/7amenazastride.png)
-![AMENAZA8](./IMG/8amenazastride.png)
+![AMENAZA1](../IMG/1amenazastride.png)
+![AMENAZA2](../IMG/2amenazastride.png)
+![AMENAZA3](../IMG/3amenazastride.png)
+![AMENAZA4](../IMG/4amenazastride.png)
+![AMENAZA5](../IMG/5amenazastride.png)
+![AMENAZA6](../IMG/6amenazastride.png)
+![AMENAZA7](../IMG/7amenazastride.png)
+![AMENAZA8](../IMG/8amenazastride.png)
 
 ### Evidencia visual 2: Panel de amenazas y reporte generado en Threat Dragon
 
 > **Instrucción:** Inserta aquí una captura del panel de amenazas dentro de Threat Dragon o del informe PDF exportado desde el botón **Reporte** (*Report*).
 
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_1.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_2.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_3.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_4.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_5.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_6.png)
-![Informe STRIDE generado en OWASP Threat Dragon](./IMG/page_7.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_1.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_2.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_3.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_4.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_5.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_6.png)
+![Informe STRIDE generado en OWASP Threat Dragon](../IMG/page_7.png)
 
 
 *Figura 2. Vista del informe generado desde OWASP Threat Dragon 2.6.2 con el resumen de amenazas STRIDE y sus respectivas mitigaciones.*
@@ -135,8 +135,6 @@ A continuación se detallan las **9 amenazas** incorporadas al modelo, explicand
 
 * **Paso 7:** Verificar en la tienda desplegada (`http://127.10.0.1:3000`) al menos dos de las amenazas identificadas en el modelo STRIDE.
 * **Paso 8:** Guardar el modelo modificado en una carpeta local sin alterar el repositorio original (`threat-model-juice-shop-stride.json`) y exportar el informe en PDF desde Threat Dragon.
-
-
 
 ### Desarrollo de las comprobaciones empíricas
 
@@ -151,8 +149,8 @@ A continuación se detallan las **9 amenazas** incorporadas al modelo, explicand
 
 > **Instrucción:** Inserta aquí la captura de pantalla del navegador mostrando la sesión iniciada como `admin@juice-sh.op` tras introducir `' OR 1=1--`.
 
-[PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201201.png)
-[PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201216.png)
+![PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201201.png)
+![PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201216.png)
 
 *Figura 3. Acceso no autorizado con privilegios de administrador en Juice Shop mediante inyección SQL en el formulario de inicio de sesión.*
 
@@ -167,7 +165,7 @@ A continuación se detallan las **9 amenazas** incorporadas al modelo, explicand
 
 > **Instrucción:** Inserta aquí la captura de pantalla del listado de archivos expuesto en `http://127.10.0.1:3000/ftp`.
 
-[PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201244.png)
+![PLANTILLAS/plantilla.md](PEPR/IMG/Captura de pantalla 2026-11-24 201244.png)
 
 *Figura 4. Listado público de documentos confidenciales y copias de seguridad en la ruta `/ftp` de OWASP Juice Shop.*
 
